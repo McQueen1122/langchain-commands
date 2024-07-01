@@ -101,10 +101,6 @@ Explore the technologies like documents, embeddings, and vector stores that enab
 
 Learn about agents, how they work, and how to build custom tools to enhance their capabilities.
 
-## Comprehensive Documentation
-
-Each script in this repository contains detailed comments explaining the purpose and functionality of the code. This will help you understand the flow and logic behind each example.
-
 ## FAQ
 
 **Q: What is LangChain?**  
