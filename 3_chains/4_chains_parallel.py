@@ -2,13 +2,13 @@ from dotenv import load_dotenv
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.runnable import RunnableParallel, RunnableLambda
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 # Load environment variables from .env
 load_dotenv()
 
 # Create a ChatOpenAI model
-model = ChatOpenAI(model="gpt-4o")
+model = ChatGoogleGenerativeAI(model="gemini-1.5-pro-latest")
 
 # Define prompt template
 prompt_template = ChatPromptTemplate.from_messages(
@@ -66,8 +66,10 @@ chain = (
     prompt_template
     | model
     | StrOutputParser()
-    | RunnableParallel(branches={"pros": pros_branch_chain, "cons": cons_branch_chain})
+    | RunnableParallel(branches={"pros": pros_branch_chain, "cons": cons_branch_chain}) #dictionary is created right here
     | RunnableLambda(lambda x: combine_pros_cons(x["branches"]["pros"], x["branches"]["cons"]))
+
+    #combine_pros_cons, opens the dictionary and returns in string format
 )
 
 # Run the chain
