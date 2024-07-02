@@ -4,7 +4,7 @@ from langchain.agents import AgentExecutor, create_structured_chat_agent
 from langchain.memory import ConversationBufferMemory
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_core.tools import Tool
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 # Load environment variables from .env file
 load_dotenv()
@@ -48,7 +48,7 @@ tools = [
 prompt = hub.pull("hwchase17/structured-chat-agent")
 
 # Initialize a ChatOpenAI model
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro-latest")
 
 # Create a structured Chat Agent with Conversation Buffer Memory
 # ConversationBufferMemory stores the conversation history, allowing the agent to maintain context across interactions
@@ -71,8 +71,8 @@ agent_executor = AgentExecutor.from_agent_and_tools(
 
 # Initial system message to set the context for the chat
 # SystemMessage is used to define a message from the system to the agent, setting initial instructions or context
-initial_message = "You are an AI assistant that can provide helpful answers using available tools.\nIf you are unable to answer, you can use the following tools: Time and Wikipedia."
-memory.chat_memory.add_message(SystemMessage(content=initial_message))
+initial_ai_message = AIMessage(content="Hello! I'm an AI assistant that can provide helpful answers using available tools. If I'm unable to answer directly, I can use tools like Time and Wikipedia. How can I help you today?")
+memory.chat_memory.add_message(initial_ai_message)
 
 # Chat Loop to interact with the user
 while True:

@@ -5,7 +5,7 @@ from langchain.agents import (
     create_react_agent,
 )
 from langchain_core.tools import Tool
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 # Load environment variables from .env file
 load_dotenv()
@@ -36,9 +36,8 @@ tools = [
 prompt = hub.pull("hwchase17/react")
 
 # Initialize a ChatOpenAI model
-llm = ChatOpenAI(
-    model="gpt-4o", temperature=0
-)
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro-latest")
+
 
 # Create the ReAct agent using the create_react_agent function
 agent = create_react_agent(
@@ -54,9 +53,9 @@ agent_executor = AgentExecutor.from_agent_and_tools(
     tools=tools,
     verbose=True,
 )
-
+input = "what time is it?"
 # Run the agent with a test query
-response = agent_executor.invoke({"input": "What time is it?"})
+response = agent_executor.invoke({"input": input})
 
 # Print the response from the agent
 print("response:", response)
