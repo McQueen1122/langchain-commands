@@ -1,17 +1,4 @@
-# LangChain Crash Course
-
-Welcome to the LangChain Crash Course repository! This repo contains all the code examples you'll need to follow along with the LangChain Master Class for Beginners video. By the end of this course, you'll know how to use LangChain to create your own AI agents, build RAG chatbots, and automate tasks with AI.
-
-## Course Outline
-
-1. **Setup Environment**
-2. **Chat Models**
-3. **Prompt Templates**
-4. **Chains**
-5. **RAG (Retrieval-Augmented Generation)**
-6. **Agents & Tools**
-
-## Getting Started
+# LangChain Commands
 
 ### Prerequisites
 
@@ -114,18 +101,6 @@ Explore the technologies like documents, embeddings, and vector stores that enab
 
 Learn about agents, how they work, and how to build custom tools to enhance their capabilities.
 
-## How to Use This Repository
-
-1. **Watch the Video:** Start by watching the LangChain Master Class for Beginners video on YouTube at 2X speed for a high-level overview.
-
-2. **Run the Code Examples:** Follow along with the code examples provided in this repository. Each section in the video corresponds to a folder in this repo.
-
-3. **Join the Community:** If you get stuck or want to connect with other AI developers, join the FREE Skool community [here](https://www.skool.com/ai-developer-accelerator/about).
-
-## Comprehensive Documentation
-
-Each script in this repository contains detailed comments explaining the purpose and functionality of the code. This will help you understand the flow and logic behind each example.
-
 ## FAQ
 
 **Q: What is LangChain?**  
@@ -142,11 +117,3 @@ A: Yes! Contributions are welcome. Please open an issue or submit a pull request
 
 **Q: Where can I find more information about LangChain?**  
 A: Check out the official LangChain documentation and join the Skool community for additional resources and support.
-
-## Support
-
-If you encounter any issues or have questions, feel free to open an issue on GitHub or ask for help in the Skool community.
-
-## License
-
-This project is licensed under the MIT License.
